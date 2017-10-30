@@ -1,0 +1,18 @@
+<App Background="#fff">
+    <StatusBarBackground Background="#fff" Alignment="Top" Dock="Top" />
+	<iOS.StatusBarConfig Style="Light" />
+	<Android.StatusBarConfig Color="#fff" />
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Fill" Alignment="Center">
+             <Text Value="Hello Doubleclick" />
+        </StackPanel>
+        <Panel Height="50" ux:Name="AdPanel" Color="#000" Dock="Bottom" Alignment="Bottom">
+            <NativeViewHost ux:Name="Ads" RenderToTexture="True" Layer="Background">
+                <Google.DFPBanner Id="/00000000/BANNER-ID" />
+            </NativeViewHost>
+            <WhileKeyboardVisible>
+                <Change Target="Ads.Opacity" Value="0" />
+            </WhileKeyboardVisible>
+        </Panel>
+    </DockPanel>        
+</App>
